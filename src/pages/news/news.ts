@@ -26,6 +26,7 @@ export class NewsPage {
   }
 
   getNews(search = '*'){
+    if(!search) search = '*';
     this.newsProvider.getNews(`everything?q=${search}&from=2018-10-06&sortBy=publishedAt?language=en`).subscribe(articles => {
       this.articles = articles;
     });

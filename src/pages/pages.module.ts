@@ -23,7 +23,7 @@ import { IonicPageModule } from 'ionic-angular';
     NewsSinglePageModule,
     ContactPageModule,
     AboutPageModule,
-    IonicPageModule.forChild(AboutPage)
+    IonicPageModule.forChild(HomePage)
   ],
 })
 export class PagesModule {}
