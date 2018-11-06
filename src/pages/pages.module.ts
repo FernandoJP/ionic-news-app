@@ -1,31 +1,29 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { AboutPage } from './about/about';
-import { ContactPage } from './contact/contact';
 import { HomePage } from './home/home';
 import { TabsPage } from './tabs/tabs';
-import { NewsPage } from './news/news';
-import { NewsSinglePage } from './news-single/news-single';
+import { NewsSinglePageModule } from './news-single/news-single.module';
+import { NewsPageModule } from './news/news.module';
+import { ContactPageModule } from './contact/contact.module';
+import { AboutPageModule } from './about/about.module';
+import { AboutPage } from './about/about';
+import { ContactPage } from './contact/contact';
+import { IonicPageModule } from 'ionic-angular';
 
 @NgModule({
   declarations: [
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage,
-    NewsPage,
-    NewsSinglePage
+    TabsPage
   ],
   entryComponents: [
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage,
-    NewsPage,
-    NewsSinglePage
+    TabsPage
   ],
   imports: [
-    IonicPageModule.forChild(NewsSinglePage),
+    NewsPageModule,
+    NewsSinglePageModule,
+    ContactPageModule,
+    AboutPageModule,
+    IonicPageModule.forChild(AboutPage)
   ],
 })
 export class PagesModule {}

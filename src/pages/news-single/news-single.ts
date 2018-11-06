@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the NewsSinglePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Article } from '../../app/domain/news';
+import { NewsProvider } from '../../providers/news/news';
 
 @IonicPage()
 @Component({
@@ -14,11 +9,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'news-single.html',
 })
 export class NewsSinglePage {
+  article:Article;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public newsProvider: NewsProvider) {}
 
   ionViewDidLoad() {
+    this.article = this.newsProvider.currentArticle;
     console.log('ionViewDidLoad NewsSinglePage');
   }
 
